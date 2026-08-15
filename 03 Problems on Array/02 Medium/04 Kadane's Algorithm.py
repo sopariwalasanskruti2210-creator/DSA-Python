@@ -3,27 +3,31 @@ Given an integer array nums, find the subarray with the largest sum and return t
 elements present in that subarray.
 A subarray is a contiguous non-empty sequence of elements within an array.
 '''
-nums = [-2,1,-3,4,-1,2,1,-5,4]
+nums = [-2,1,-3,4,-1,2,1,-7,4]
 sum = 0
 max_sum = float("-inf")
 i=0
+current_start = 0
+best_start = 0
+end = -1
 while i<len(nums):
 
   sum+=nums[i]
 
   if sum>max_sum:
     max_sum=sum
+    best_start = current_start
     end=i
 
   if sum<0:
     sum=0
-    start=i+1
+    current_start=i+1
 
   i+=1
 
 print(max_sum)
 ans = []
-for i in range(start,end+1):
+for i in range(best_start,end+1):
   ans.append(nums[i])
 
 print(ans)

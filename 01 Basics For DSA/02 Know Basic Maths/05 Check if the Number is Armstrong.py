@@ -7,7 +7,8 @@ raised to the power of the number of digits.
 n=int(input("Enter a num : "))
 temp=n
 armstrong=0
-digits = __builtins__.len(list(str(n)))
+digits = len(str(n))
+print(digits)
 while n>0:
   rmd = n%10
   armstrong = armstrong + rmd**digits

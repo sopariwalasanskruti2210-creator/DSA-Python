@@ -17,4 +17,4 @@ for ele in arr:
 
 print("Output : ")
 for ele in num_input:
-  print(f"{ele} = {hash[ele]}")
+  print(f"{ele} : {hash[ele]}")

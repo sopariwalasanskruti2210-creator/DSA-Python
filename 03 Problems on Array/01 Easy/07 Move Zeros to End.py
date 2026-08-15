@@ -4,9 +4,9 @@ The relative order of the other elements must remain the same.
 This must be done in place, without making a copy of the array.
 '''
 nums = [1,2,0,0,3,4,5]
-for i in nums:
-    if i==0:
-        nums.remove(i)
-        nums.append(i)
-
+left = 0
+for right in range(len(nums)):
+    if nums[right] != 0:
+        nums[left], nums[right] = nums[right], nums[left]
+        left += 1
 print(nums)
