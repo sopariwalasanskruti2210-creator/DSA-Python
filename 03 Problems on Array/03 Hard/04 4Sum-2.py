@@ -13,7 +13,7 @@ for i in range(len(nums)):
   hashmap = set()
   for j in range(i+1,len(nums)):
     for k in range(j+1,len(nums)):
-      req = target-nums[i]+nums[j]-nums[k]
+      req = target-(nums[i]+nums[j]+nums[k])
 
       if req in hashmap:
         quadraplet = tuple(sorted([nums[i],nums[j],nums[k],req]))

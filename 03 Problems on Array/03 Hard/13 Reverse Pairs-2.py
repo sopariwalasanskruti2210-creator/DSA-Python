@@ -9,7 +9,7 @@ def mergeSort(nums,low,mid,high):
     left = low
     right = mid+1
     while left<=mid and right<=high:
-        if nums[left]<nums[right]:
+        if nums[left]<=nums[right]:
             temp.append(nums[left])
             left+=1
         else:
@@ -31,7 +31,7 @@ def countPairs(nums,low,mid,high):
     left = low
     right = mid+1
     cnt = 0
-    for i in range(left,right):
+    for i in range(left,mid+1):
         while right<=high and nums[i]>2*nums[right]:
             right+=1
         cnt+=(right-(mid+1))
@@ -54,3 +54,4 @@ def merge(nums,low,high):
 nums = [6, 4, 1, 2, 7]
 res = merge(nums,0,len(nums)-1)
 print(res)
+

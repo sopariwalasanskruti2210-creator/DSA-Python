@@ -19,4 +19,5 @@ for i in range(len(nums)):
 
     hashmap.add(nums[j])
 
-print(ans)
+for a in ans:
+  print(list(a),end="")
