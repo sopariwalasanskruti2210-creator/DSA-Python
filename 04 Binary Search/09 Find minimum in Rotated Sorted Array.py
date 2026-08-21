@@ -9,8 +9,11 @@ def minimum(nums):
     while low<=high:
         mid = (low+high)//2
 
+        # If mid is greater than high, minimum must be on the right
         if nums[mid]>nums[high]:
             low = mid+1
+
+        # Otherwise, minimum is at mid or somewhere on the left
         else:
             high = mid-1
 

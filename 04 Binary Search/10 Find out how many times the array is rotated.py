@@ -10,6 +10,7 @@ def numofRotattion(nums):
     while low<high:
         mid = (low+high)//2
 
+        # Find minimum of array that index is the num of times array is rotated 
         if nums[mid]>nums[high]:
             low = mid+1
         else:

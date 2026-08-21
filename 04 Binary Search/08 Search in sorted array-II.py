@@ -15,6 +15,9 @@ def binarySearch(nums,k):
             ans = mid
             return ans
 
+        # If low, mid, and high are all equal,
+        # we cannot determine which half is sorted.
+        # So shrink both ends and continue.
         if nums[low]==nums[mid]==nums[high]:
             low +=1
             high -=1

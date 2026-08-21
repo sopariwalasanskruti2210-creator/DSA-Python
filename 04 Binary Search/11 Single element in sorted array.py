@@ -7,6 +7,7 @@ def singleElement(nums):
     low = 1
     high = n-2
 
+    # Edge cases
     if len(nums)==1:
         return nums[0]
 
@@ -25,6 +26,8 @@ def singleElement(nums):
 
         # If not then check for both half as for left half the pair if mid is odd the pair is (odd,odd-1) for even 
         # it is (even,even+1) same as for right it is reversed
+        # (even,odd)->left half
+        # (odd,even)->right half
         if (mid%2!=0 and nums[mid]==nums[mid-1]) or (mid%2==0 and nums[mid]==nums[mid+1]):
             low = mid+1
         else:

@@ -6,8 +6,11 @@ If the target is not found in the array, return [-1, -1].
 def firstOcurrence(nums,target):
     low = 0
     high = len(nums)-1
-    ans = -1
+    ans = len(nums)
 
+    # When target is found, don't return immediately.
+    # Store mid as a possible answer and search left
+    # because another occurrence may exist at a smaller index.
     while low<=high:
         mid = (low+high)//2
 
@@ -23,8 +26,11 @@ def firstOcurrence(nums,target):
 def lastOccurrance(nums,target):
     low = 0
     high = len(nums)-1
-    ans = -1
-    
+    ans = len(nums)
+
+    # When elemnet greater than target is found, don't return immediately.
+    # Store mid as a possible answer and search right
+    # because another occurrence may exist at a higher index.
     while low<=high:
         mid = (low+high)//2
     
@@ -40,10 +46,10 @@ def lastOccurrance(nums,target):
 
 
 nums = [5, 7, 7, 8, 8, 10]
-target = 9
+target = 8
 fs = firstOcurrence(nums,target)
 ls = lastOccurrance(nums,target)
-if (ls == len(nums) or nums[ls]!=target):
+if (fs == len(nums) or nums[fs]!=target):
     print("[-1.-1]")
 else:
     print(f"[{fs},{ls}]")

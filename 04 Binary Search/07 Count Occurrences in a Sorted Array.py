@@ -2,10 +2,11 @@
 You are given a sorted array of integers arr and an integer target. Your task is to determine how many times target appears in arr.
 Return the count of occurrences of target in the array.
 '''
+# Number of occurrences = Upper Bound - Lower Bound.
 def lowerBound(arr,target):
     low = 0 
     high = len(arr)-1
-    ans = 0
+    ans = len(arr)
 
     while low<=high:
         mid = (low+high)//2
@@ -21,7 +22,7 @@ def lowerBound(arr,target):
 def upperBound(arr,target):
     low = 0 
     high = len(arr)-1
-    ans = 0
+    ans = len(arr)
 
     while low<=high:
         mid = (low+high)//2

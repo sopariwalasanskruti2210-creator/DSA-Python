@@ -7,6 +7,11 @@ def binarySearch(nums,target):
     high = len(nums)-1
     ans = len(nums)
 
+    # Search Insert Position is exactly the same as finding
+    # the Lower Bound of the target.
+    # Find the first index where nums[index] >= target.
+    # If no element >= target is found
+    # the lower bound (and insertion position) is len(nums).
     while low<=high:
         mid = (low+high)//2
         if nums[mid]>=target:
@@ -19,6 +24,6 @@ def binarySearch(nums,target):
 
 
 nums = [1, 3, 5, 6]
-target = 2
+target = 7
 res = binarySearch(nums,target)
 print(res)

@@ -9,6 +9,7 @@ def binarySearch(nums,target):
     high = len(nums)-1
     ans = len(nums)
 
+    #Upper Bound : where element is greater than target
     while low<=high:
         mid = (low+high)//2
         if nums[mid]>target:

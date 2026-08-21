@@ -8,6 +8,9 @@ def firstOcurrence(nums,target):
     high = len(nums)-1
     ans = -1
 
+    # When target is found, don't return immediately.
+    # Store mid as a possible answer and search left
+    # because another occurrence may exist at a smaller index.
     while low<=high:
         mid = (low+high)//2
 
@@ -25,7 +28,10 @@ def lastOccurrance(nums,target):
     low = 0
     high = len(nums)-1
     ans = -1
-    
+
+    # When elemnet greater than target is found, don't return immediately.
+    # Store mid as a possible answer and search right
+    # because another occurrence may exist at a higher index.
     while low<=high:
         mid = (low+high)//2
     

@@ -14,7 +14,11 @@ def binarySearch(nums,k):
         if nums[mid]==k:
             ans = mid
             return ans
-        
+
+        # If one half is sorted, check whether target lies within
+        # the range of that sorted half.
+        # If yes -> search inside that half.
+        # If no  -> eliminate it and search the other half.
         if nums[low]<=nums[mid]:
             if (nums[low]<=k<nums[mid]):
                 high = mid-1
