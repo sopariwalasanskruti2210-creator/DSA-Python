@@ -10,15 +10,17 @@ The driver code will assess correctness by printing and checking only the first 
 An array sorted in non-decreasing order is an array where every element to the right of an element is 
 either equal to or greater in value than that element.
 '''
+
 nums = [0, 0, 3, 3, 5, 6]
 ans = [nums[0]]
 k=1
+
 for ele in range(1,len(nums)):
+
+    # As array is sorted we check it's previos element we it is same ,
+    # if it is same as previos then it is duplicate as here we start from index 1
     if nums[ele]!=nums[ele-1]:
         ans.append(nums[ele])
         k+=1
         
-    for i in range(len(ans)):
-        nums[i]=ans[i]
-
 print(k)
