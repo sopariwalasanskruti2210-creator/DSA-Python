@@ -1,27 +1,50 @@
 '''
-Given an array of integers nums, sort the array in non-decreasing order using the recursive Bubble Sort algorithm, and return the sorted array.
-You must implement Bubble Sort using recursion only.
-Do not use built-in sorting functions (sort, sorted, Arrays.sort, etc.).
-A sorted array in non-decreasing order is an array where each element is greater than or equal to the previous one.
+Given an array of integers nums, sort the array in non-decreasing order
+using the recursive Bubble Sort algorithm.
 '''
-def bubbleSort(arr,n):
-  if n==1:
-    return
 
-  did_swap = False
-  for j in range(n-1):
-    if(arr[j]>arr[j+1]):
-      arr[j],arr[j+1]=arr[j+1],arr[j]
-      print(arr)
-      did_swap = True
+def bubble_sort(arr, n):
 
-  if not did_swap:
-    return
+    # Base case:
+    # If only one element is left, it is already sorted.
+    if n == 1:
+        return
 
-  bubbleSort(arr,n-1)
+    # Assume no swapping happens in this pass
+    did_swap = False
 
-print("Enter array : ")
-arr = list(map(int,input().split()))
-res = bubbleSort(arr,len(arr))
+    # One Bubble Sort pass:
+    # Compare adjacent elements from index 0 to n - 1.
+    #
+    # After this loop, the largest element among the
+    # first n elements moves to index n - 1.
+    for j in range(n - 1):
 
-print(arr)
+        # If left element is greater than right element,
+        # swap them.
+        if arr[j] > arr[j + 1]:
+
+            arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+            print(arr)
+
+            # A swap happened
+            did_swap = True
+
+    # If no swaps happened, the array is already sorted,
+    # so stop the recursion.
+    if not did_swap:
+        return
+
+    # The largest element is now at index n - 1.
+    # Recursively sort the remaining n - 1 elements.
+    bubble_sort(arr, n - 1)
+
+
+print("Enter array:")
+
+arr = list(map(int, input().split()))
+
+bubble_sort(arr, len(arr))
+
+print("Sorted Array:", arr)

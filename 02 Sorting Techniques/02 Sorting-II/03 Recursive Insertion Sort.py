@@ -1,24 +1,50 @@
 '''
-Given an array of integers nums, sort the array in non-decreasing order 
-using the recursive Insertion Sort algorithm, and return the sorted array.
-You must implement Insertion Sort using recursion only.
-Do not use loops (like for or while) or built-in sorting functions (sort, Arrays.sort, etc.).
-A sorted array in non-decreasing order is an array where each element is 
-greater than or equal to all elements that come before it.
+Recursive Insertion Sort
+
+No for loop
+No while loop
 '''
-def insertSort(arr,i,n):
-  if i==n:
-    return
-  j=i
-  while(j>0 and arr[j-1]>arr[j]):
-    arr[j-1],arr[j]=arr[j],arr[j-1]
-    print(arr)
-    j-=1
 
-  insertSort(arr,i+1,n)
+def insert(arr, j):
+    
+    # Base case:
+    # If j reaches 0, the element is already
+    # at the beginning of the array.
+    if j == 0:
+        return
 
-j=0
-print("Enter array : ")
-arr = list(map(int,input().split()))
-sol = insertSort(arr,0,len(arr))
-print(arr)
+    # If the left element is greater,
+    # swap them and continue moving left.
+    if arr[j - 1] > arr[j]:
+
+        arr[j - 1], arr[j] = arr[j], arr[j - 1]
+
+        print(arr)
+
+        # Recursively check the previous position.
+        insert(arr, j - 1)
+
+
+def insert_sort(arr, i, n):
+
+    # Base case:
+    # If all elements have been processed,
+    # the array is sorted.
+    if i == n:
+        return
+
+    # Insert arr[i] into its correct position
+    # in the already sorted left part.
+    insert(arr, i)
+
+    # Move to the next element recursively.
+    insert_sort(arr, i + 1, n)
+
+
+print("Enter array:")
+
+arr = list(map(int, input().split()))
+
+insert_sort(arr, 0, len(arr))
+
+print("Sorted Array:", arr)
