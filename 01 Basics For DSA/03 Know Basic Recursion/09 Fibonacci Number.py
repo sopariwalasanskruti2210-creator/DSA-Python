@@ -1,17 +1,46 @@
 '''
-The Fibonacci numbers, commonly denoted F(n) form a sequence, 
-called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,
-F(0) = 0, F(1) = 1
-F(n) = F(n - 1) + F(n - 2), for n > 1.
-Given n, calculate F(n).
-'''
-def fib(n):
-  if(n==0):
-    return 0
-  elif(n==1):
-    return 1
-  return fib(n-1) + fib(n-2)
+The Fibonacci numbers form a sequence where each number
+is the sum of the previous two numbers.
 
-n=int(input("Enter a num till fibonacci series u need to print : "))
-for i in range(0,n+1):
-  print(fib(i),end=",")
+F(0) = 0
+F(1) = 1
+
+F(n) = F(n - 1) + F(n - 2)
+'''
+
+def fib(n):
+
+    # Example: fib(5)
+    #
+    # fib(5)
+    # = fib(4) + fib(3)
+    #
+    # fib(4)
+    # = fib(3) + fib(2)
+    #
+    # fib(3)
+    # = fib(2) + fib(1)
+    #
+    # The recursion continues until it reaches
+    # the base cases:
+    #
+    # fib(0) = 0
+    # fib(1) = 1
+
+    # Base case
+    if n == 0:
+        return 0
+
+    if n == 1:
+        return 1
+
+    # Recursive case:
+    # Current Fibonacci number is the sum
+    # of the previous two Fibonacci numbers
+    return fib(n - 1) + fib(n - 2)
+
+
+n = int(input("Enter a num till which Fibonacci series you need: "))
+
+for i in range(n + 1):
+    print(fib(i), end=", ")
