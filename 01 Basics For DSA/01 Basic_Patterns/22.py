@@ -12,6 +12,7 @@
 n=int(input("Enter a num : "))
 for i in range(2*n-1):
   for j in range(2*n-1):
+    # Find the minimum distance from element and then do n-minimum distance
     top=i
     left=j
     right=(2*n - 2)-j
