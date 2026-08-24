@@ -1,43 +1,46 @@
-'''
+"""
 You are given a sorted array of integers arr and an integer target. Your task is to determine how many times target appears in arr.
 Return the count of occurrences of target in the array.
-'''
+"""
+
+
 # Number of occurrences = Upper Bound - Lower Bound.
-def lowerBound(arr,target):
-    low = 0 
-    high = len(arr)-1
+def lowerBound(arr, target):
+    low = 0
+    high = len(arr) - 1
     ans = len(arr)
 
-    while low<=high:
-        mid = (low+high)//2
+    while low <= high:
+        mid = (low + high) // 2
 
-        if arr[mid]>=target:
+        if arr[mid] >= target:
             ans = mid
-            high = mid-1
+            high = mid - 1
         else:
-            low = mid+1
+            low = mid + 1
 
     return ans
 
-def upperBound(arr,target):
-    low = 0 
-    high = len(arr)-1
+
+def upperBound(arr, target):
+    low = 0
+    high = len(arr) - 1
     ans = len(arr)
 
-    while low<=high:
-        mid = (low+high)//2
+    while low <= high:
+        mid = (low + high) // 2
 
-        if arr[mid]>target:
+        if arr[mid] > target:
             ans = mid
-            high = mid-1
+            high = mid - 1
         else:
-            low = mid+1
+            low = mid + 1
 
     return ans
 
 
 arr = [0, 0, 1, 1, 1, 2, 3]
 target = 1
-f = lowerBound(arr,target)
-l = upperBound(arr,target)
-print("Num of Occurence : ",l-f)
+f = lowerBound(arr, target)
+l = upperBound(arr, target)
+print("Num of Occurence : ", l - f)

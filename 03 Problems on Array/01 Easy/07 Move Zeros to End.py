@@ -1,16 +1,16 @@
-'''
-Given an integer array nums, move all the 0's to the end of the array. 
+"""
+Given an integer array nums, move all the 0's to the end of the array.
 The relative order of the other elements must remain the same.
 This must be done in place, without making a copy of the array.
-'''
+"""
 
-nums = [1,2,0,0,3,4]
+nums = [1, 2, 0, 0, 3, 4]
 left = 0
 
 for right in range(len(nums)):
 
-    # Search element 0 element using right if we find any then swap it with left 
-    # for this example : 
+    # Search element 0 element using right if we find any then swap it with left
+    # for this example :
     # i = 0 => nums[right] != 0 => left = 0 => swaped with element itself
     # i = 1 => nums[right] != 0 => left = 1 => swaped with element itself
     # i = 2 => nums[right] == 0 => left = 1

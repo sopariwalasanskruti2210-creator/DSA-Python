@@ -1,24 +1,25 @@
-'''
-Given an array of intervals where intervals[i] = [starti, endi], merge all 
+"""
+Given an array of intervals where intervals[i] = [starti, endi], merge all
 overlapping intervals and return an array of the non-overlapping intervals that cover all the intervals in the input.
 You can return the intervals in any order.
-'''
-intervals = [[5,7],[1,3],[4,6],[8,10]]
+"""
+
+intervals = [[5, 7], [1, 3], [4, 6], [8, 10]]
 intervals.sort()
 ans = []
 n = len(intervals)
 i = 0
-while i<n:
+while i < n:
     start = intervals[i][0]
     end = intervals[i][1]
 
-    j=i+1
-    while j<n and intervals[j][0]<=end:
-        end=max(end,intervals[j][1])
-        j+=1
+    j = i + 1
+    while j < n and intervals[j][0] <= end:
+        end = max(end, intervals[j][1])
+        j += 1
 
-    ans.append([start,end])
+    ans.append([start, end])
 
-    i=j
+    i = j
 
 print(ans)

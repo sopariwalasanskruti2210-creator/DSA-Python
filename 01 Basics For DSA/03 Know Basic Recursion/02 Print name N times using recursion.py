@@ -1,7 +1,9 @@
-''' 
+"""
 Print name N times using recursion
-'''
-def print_name(name,n):
+"""
+
+
+def print_name(name, n):
 
     # Recursion uses the call stack.
     # For example:
@@ -33,12 +35,13 @@ def print_name(name,n):
     #
     # Once n == 0, the base case is reached.
     # Then all the function calls return one by one.
-    if(n==0):
+    if n == 0:
         return 0
 
     print(name)
-    print_name(name,n-1)
+    print_name(name, n - 1)
+
 
 n = int(input("Enter a num till name should be printed : "))
 name = input("Enter your name : ")
-print_name(name,n)
+print_name(name, n)

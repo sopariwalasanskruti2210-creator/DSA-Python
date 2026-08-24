@@ -1,11 +1,13 @@
-'''
+"""
 Given an integer n, write a function to print all numbers from 1 to n (inclusive) using recursion.
 You must not use any loops such as for, while, or do-while.
 The function should print each number on a separate line, in increasing order from 1 to n.
-'''
+"""
+
+
 def print_num(n):
 
-  # Recursion works using the call stack.
+    # Recursion works using the call stack.
     # For example: n = 5
     #
     # First, the function keeps making recursive calls:
@@ -42,10 +44,11 @@ def print_num(n):
     # print_num(3) -> print 3
     # print_num(4) -> print 4
     # print_num(5) -> print 5
-  if(n==0):
-    return 0
-  print_num(n-1)
-  print(n)
+    if n == 0:
+        return 0
+    print_num(n - 1)
+    print(n)
 
-x=int(input("Enter a num : "))
+
+x = int(input("Enter a num : "))
 print_num(x)

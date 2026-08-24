@@ -1,9 +1,9 @@
-'''
+"""
 Given an array of integers nums and an integer k,
 return the total number of subarrays whose sum equals to k.
-'''
+"""
 
-nums = [1,2,3]
+nums = [1, 2, 3]
 k = 3
 
 prefix = {}
@@ -19,7 +19,6 @@ for i in range(len(nums)):
     if current_sum == k:
         count += 1
 
-
     # If an earlier prefix sum = current_sum - k,
     # then the elements between that prefix and current index
     # have sum k
@@ -27,7 +26,6 @@ for i in range(len(nums)):
 
     if pre in prefix:
         count += prefix[pre]
-
 
     # Store how many times this prefix sum has appeared
     prefix[current_sum] = prefix.get(current_sum, 0) + 1

@@ -1,10 +1,11 @@
-'''
+"""
 Given a string s, return true if the string is palindrome,
 otherwise false.
 
 A string is called palindrome if it reads the same
 forward and backward.
-'''
+"""
+
 
 def is_palindrome(left, right, s):
 

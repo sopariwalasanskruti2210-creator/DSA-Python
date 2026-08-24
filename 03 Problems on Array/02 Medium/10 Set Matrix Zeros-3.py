@@ -1,11 +1,11 @@
-'''
+"""
 Given an m x n integer matrix matrix, if an element is 0,
 set its entire row and column to 0. You must do it in place.
-'''
+"""
 
 # Make Zeros in matrix - Optimal Approach
 
-nums = [[1,1,1],[1,0,1],[1,1,1]]
+nums = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]
 
 m = len(nums)
 n = len(nums[0])

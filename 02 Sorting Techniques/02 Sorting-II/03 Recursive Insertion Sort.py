@@ -1,12 +1,13 @@
-'''
+"""
 Recursive Insertion Sort
 
 No for loop
 No while loop
-'''
+"""
+
 
 def insert(arr, j):
-    
+
     # Base case:
     # If j reaches 0, the element is already
     # at the beginning of the array.

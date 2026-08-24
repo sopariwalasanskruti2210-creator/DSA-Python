@@ -1,10 +1,10 @@
-'''
+"""
 Given an array of integers nums, sort the array in non-decreasing order
 using the Insertion Sort algorithm.
 
 A sorted array in non-decreasing order is an array where each element
 is greater than or equal to all previous elements.
-'''
+"""
 
 print("Enter the array elements: ")
 arr = list(map(int, input().split()))
@@ -108,7 +108,6 @@ for i in range(len(arr)):
     # Final sorted array:
     # [2, 12, 22, 23, 77]
 
-
     # Start comparing the current element
     # with elements on its left.
     j = i
@@ -125,7 +124,6 @@ for i in range(len(arr)):
 
         # Move one position towards the left.
         j -= 1
-
 
 
 print("Sorted Array:", arr)

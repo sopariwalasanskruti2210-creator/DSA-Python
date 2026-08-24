@@ -1,4 +1,4 @@
-'''
+"""
 The Fibonacci numbers form a sequence where each number
 is the sum of the previous two numbers.
 
@@ -6,7 +6,8 @@ F(0) = 0
 F(1) = 1
 
 F(n) = F(n - 1) + F(n - 2)
-'''
+"""
+
 
 def fib(n):
 

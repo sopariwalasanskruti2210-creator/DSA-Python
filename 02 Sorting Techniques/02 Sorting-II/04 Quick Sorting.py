@@ -1,7 +1,8 @@
-'''
+"""
 Given an array of integers called nums, sort the array in non-decreasing
 order using the Quick Sort algorithm.
-'''
+"""
+
 
 # Partition function:
 # It selects a pivot and places it in its correct sorted position.

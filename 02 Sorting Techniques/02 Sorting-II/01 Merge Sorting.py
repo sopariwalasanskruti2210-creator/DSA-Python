@@ -1,10 +1,11 @@
-'''
+"""
 Given an array of integers nums, sort the array in non-decreasing order
 using the Merge Sort algorithm.
 
 A sorted array in non-decreasing order is an array where each element is
 greater than or equal to all previous elements.
-'''
+"""
+
 
 # This function merges two already sorted parts of the array.
 def merge(arr, low, mid, high):
@@ -43,13 +44,11 @@ def merge(arr, low, mid, high):
             temp.append(arr[right])
             right += 1
 
-
     # If elements are remaining in the left half,
     # add all of them to temp.
     while left <= mid:
         temp.append(arr[left])
         left += 1
-
 
     # If elements are remaining in the right half,
     # add all of them to temp.
@@ -57,19 +56,18 @@ def merge(arr, low, mid, high):
         temp.append(arr[right])
         right += 1
 
-
     # Copy the sorted elements from temp
     # back into the original array.
     #
     # i goes from low to high
     # temp[i - low] gives the correct index in temp
     # temp starts from index 0, but arr starts from index low.
-	# So we use i - low to get the correct temp index.
-	#
-	# Example: low = 3
-	# arr[3] = temp[0]
-	# arr[4] = temp[1]
-	# arr[5] = temp[2]
+    # So we use i - low to get the correct temp index.
+    #
+    # Example: low = 3
+    # arr[3] = temp[0]
+    # arr[4] = temp[1]
+    # arr[5] = temp[2]
     for i in range(low, high + 1):
         arr[i] = temp[i - low]
 
