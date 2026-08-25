@@ -11,7 +11,9 @@ nums = [1, -2, 3, 5, 7, 9]
 target = 7
 ans = set()
 for i in range(len(nums)):
+    
     hashmap = set()
+    
     for j in range(i + 1, len(nums)):
         for k in range(j + 1, len(nums)):
             req = target - (nums[i] + nums[j] + nums[k])
