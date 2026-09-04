@@ -28,8 +28,19 @@ def minTime(paint,time,painters) :
     low = max(paint)
     high = sum(paint)
     
+    # Edge cases
+    if painters <= len(paint) :
+        return ((max(paint))*time)%10000003
+    
+    if painters == 1:
+        return time%10000003
+    
+    if painters == 0:
+        return 0 
+    
     ans = 0
     
+    # Start binary search
     while low <= high:
         
         mid = ((low + high)//2)
@@ -42,7 +53,7 @@ def minTime(paint,time,painters) :
         else :
             low = mid + 1
             
-    return ans*time
+    return (ans*time)%10000003
 
 painters = 3
 time = 2
